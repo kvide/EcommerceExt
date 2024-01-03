@@ -58,7 +58,14 @@ $smarty->assign('formstart', $this->CreateFormStart($id, 'admin_save_prefs', $re
                     array('thetab' => 'payment')));
 $smarty->assign('formend', $this->CreateFormEnd());
 
-$tmp_module_list = \module_helper::get_modules_with_capability('payment_gateway', array('baseversion' => '0.98.0'));
+// FIXME: Hack... Apparently no one tested this without Payment extension previously
+//                Yet again reason switching over to using interfaces
+$tmp_module_list = [];
+if (!\defined('MOD_XTMODULE'))
+{
+    \define('MOD_XTMODULE', 'XTModule');
+    $tmp_module_list = \module_helper::get_modules_with_capability('payment_gateway', array('baseversion' => '0.98.0'));
+}
 if (count($tmp_module_list))
 {
     $module_list = array();
