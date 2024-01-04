@@ -76,7 +76,7 @@ final class offline_charge
         {
             throw new \CmsInvalidDataException('Invalid values passed to ' . __CLASS__ . '::' . __METHOD__);
         }
-        $feu = \cms_utils::get_module(MOD_MAMS);
+        $feu = \cms_utils::get_module('MAMS');
 
         if (! $feu)
         {
@@ -124,7 +124,7 @@ final class offline_charge
         {
             throw new \CmsInvalidDataException('Invalid values passed to ' . __CLASS__ . '::' . __METHOD__);
         }
-        $feu = \cms_utils::get_module(MOD_MAMS);
+        $feu = \cms_utils::get_module('MAMS');
         if (! $feu)
         {
             throw new \CmsException('Attempt to get payment gateway token for offline access with no MAMS module');
@@ -183,7 +183,7 @@ final class offline_charge
         {
             throw new \CmsInvalidDataException('Invalid values passed to ' . __CLASS__ . '::' . __METHOD__);
         }
-        $feu = \cms_utils::get_module(MOD_MAMS);
+        $feu = \cms_utils::get_module('MAMS');
         if (! $feu)
         {
             throw new \CmsException('Attempt to delete payment gateway token for offline access with no MAMS module');
@@ -221,7 +221,7 @@ final class offline_charge
      */
     public static function list_tokens($feu_uid = null)
     {
-        $feu = \cms_utils::get_module(MOD_MAMS);
+        $feu = \cms_utils::get_module('MAMS');
         if (! $feu)
         {
             throw new \CmsException('Attempt to get payment gateway token for offline access with no MAMS module');

@@ -206,7 +206,7 @@ class cart
     public static function calculate_cartitem_summary($product_info, cartitem $item)
     {
         $smarty = cmsms()->GetSmarty();
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $smarty->assign('currency_symbol', $ecomm->GetPreference('currency_symbol'));
         $smarty->assign('weight_units', $ecomm->GetPreference('weight_units'));
         $smarty->assign('currency_code', $ecomm->GetPreference('currency_code'));

@@ -82,7 +82,7 @@ final class setup_manager
             throw new \LogicException('Invalid module (missing method) passed to ' . __METHOD__);
         }
 
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $ecomm->SetPreference(self::PREF_SHOPPING_CART_MANAGER, $module_name);
     }
 
@@ -97,13 +97,13 @@ final class setup_manager
         {
             throw new \LogicException('Cannot unset this shopping cart manager');
         }
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $ecomm->RemovePreference(self::PREF_SHOPPING_CART_MANAGER);
     }
 
     public static function get_shopping_cart_mgr_name()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $tmp = $ecomm->GetPreference(self::PREF_SHOPPING_CART_MANAGER);
 
         return $tmp;
@@ -131,7 +131,7 @@ final class setup_manager
             throw new \LogicException('Invalid module (missing method) passed to ' . __METHOD__);
         }
 
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $ecomm->SetPreference(self::PREF_TAX_CALCULATOR, $module_name);
     }
 
@@ -147,13 +147,13 @@ final class setup_manager
         {
             throw new \LogicException('Cannot unset this tax calculator');
         }
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $ecomm->RemovePreference(self::PREF_TAX_CALCULATOR);
     }
 
     public static function get_tax_calculator_name()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $tmp = $ecomm->GetPreference(self::PREF_TAX_CALCULATOR);
 
         return $tmp;
@@ -181,7 +181,7 @@ final class setup_manager
             throw new \LogicException('Invalid module (missing method) passed to ' . __METHOD__);
         }
 
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $ecomm->SetPreference(self::PREF_HANDLING_CALCULATOR, $module_name);
     }
 
@@ -197,13 +197,13 @@ final class setup_manager
         {
             throw new \LogicException('Cannot unset this handling calculator');
         }
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $ecomm->RemovePreference(self::PREF_HANDLING_CALCULATOR);
     }
 
     public static function get_handling_calculator_name()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $tmp = $ecomm->GetPreference(self::PREF_HANDLING_CALCULATOR);
 
         return $tmp;
@@ -231,7 +231,7 @@ final class setup_manager
             throw new \LogicException('Invalid module (missing method) passed to ' . __METHOD__);
         }
 
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $ecomm->SetPreference(self::PREF_PACKAGING_CALCULATOR, $module_name);
     }
 
@@ -247,13 +247,13 @@ final class setup_manager
         {
             throw new \LogicException('Cannot unset this packaging calculator');
         }
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $ecomm->RemovePreference(self::PREF_PACKAGING_CALCULATOR);
     }
 
     public static function get_packaging_calculator_name()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $tmp = $ecomm->GetPreference(self::PREF_PACKAGING_CALCULATOR);
 
         return $tmp;
@@ -281,7 +281,7 @@ final class setup_manager
             throw new \LogicException('Invalid module (missing method) passed to ' . __METHOD__);
         }
 
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $ecomm->SetPreference(self::PREF_SHIPPING_ASSISTANT, $module_name);
     }
 
@@ -297,13 +297,13 @@ final class setup_manager
         {
             throw new \LogicException('Cannot unset this shipping assistant');
         }
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $ecomm->RemovePreference(self::PREF_SHIPPING_ASSISTANT);
     }
 
     public static function get_shipping_assistant_name()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $tmp = $ecomm->GetPreference(self::PREF_SHIPPING_ASSISTANT);
         return $tmp;
     }
@@ -330,7 +330,7 @@ final class setup_manager
             throw new \LogicException('Invalid module (missing method) passed to ' . __METHOD__);
         }
 
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $ecomm->SetPreference(self::PREF_PROMOTION_ASSISTANT, $module_name);
     }
 
@@ -346,13 +346,13 @@ final class setup_manager
         {
             throw new \LogicException('Cannot unset this promotion assistant');
         }
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $ecomm->RemovePreference(self::PREF_PROMOTION_ASSISTANT);
     }
 
     public static function get_promotion_assistant_name()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $tmp = $ecomm->GetPreference(self::PREF_PROMOTION_ASSISTANT);
 
         return $tmp;

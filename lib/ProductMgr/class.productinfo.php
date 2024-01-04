@@ -501,7 +501,7 @@ class productinfo
             $smarty->assign('currency_code', ecomm::get_currency_code());
             $smarty->assign('weight_units', ecomm::get_weight_units());
 
-            $mod = \cms_utils::get_module(MOD_ECOMMERCEEXT);
+            $mod = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
             foreach ($this->_options as $one)
             {
                 $smarty->assign('opt', $one);

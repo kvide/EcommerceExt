@@ -60,7 +60,7 @@ final class ecomm
     public static function validate_config()
     {
         // does a number of config tests, throws an exception on the first failure.
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
 
         $addr = self::get_company_address();
         if (! $addr || ! $addr->is_valid())
@@ -112,14 +112,14 @@ final class ecomm
 
     public static function get_currency_symbol()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
 
         return $ecomm->GetPreference('currency_symbol', '$');
     }
 
     public static function get_currency_code()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
 
         return $ecomm->GetPreference('currency_code', 'USD');
     }
@@ -133,14 +133,14 @@ final class ecomm
 
     public static function get_weight_units()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
 
         return $ecomm->GetPreference('weight_units', 'lbs');
     }
 
     public static function get_length_units()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
 
         return $ecomm->GetPreference('length_units', 'in');
     }
@@ -148,7 +148,7 @@ final class ecomm
     public static function get_supplier_modules()
     {
         $res = FALSE;
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $tmp = $ecomm->GetPreference('supplier_modules');
         if (! empty($tmp))
         {
@@ -264,7 +264,7 @@ final class ecomm
 
     public static function get_system_shipping_policy()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $tmp = $ecomm->GetPreference('shipping_policy');
         if (! $tmp)
         {
@@ -342,7 +342,7 @@ final class ecomm
 
     public static function get_gateway_modules()
     {
-        $mod = \cms_utils::get_module(MOD_ECOMMERCEEXT);
+        $mod = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $tmp = $mod->GetPreference('sel_payment_modules');
         if ($tmp)
         {
@@ -356,7 +356,7 @@ final class ecomm
         die('__fixme__'); // FIXME
 
         $res = null;
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $modname = $ecomm->GetPreference('payment_module');
         if ($modname == '' || $modname == '-1')
         {
@@ -375,13 +375,8 @@ final class ecomm
     public static function reset_lineitem_desc()
     {
         $ecomm = null;
-        if (version_compare(CMS_VERSION, '1.10-beta0') < 0)
         {
-            $ecomm = \cms_utils::get_module('EcommerceExt');
-        }
-        else
-        {
-            $ecomm = \ModuleOperations::get_instance()->get_module_instance('EcommerceExt', '', TRUE);
+            $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         }
         if (! $ecomm)
         {
@@ -461,7 +456,7 @@ final class ecomm
     public static function get_displayable_option(ProductMgr\productinfo_option $opt)
     {
         $smarty = cmsms()->GetSmarty();
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
 
         $smarty->assign('currency_symbol', $ecomm->GetPreference('currency_symbol'));
         $smarty->assign('weight_units', $ecomm->GetPreference('weight_units'));
@@ -479,7 +474,7 @@ final class ecomm
 
     public static function get_company_address()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $tmp = $ecomm->GetPreference('myinfo_address');
         $res = null;
         if ($tmp)
@@ -492,7 +487,7 @@ final class ecomm
 
     public static function get_system_cartitem_policy()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
         $policy = new Cart\cartitem_policy();
         $policy->set_max_services($ecomm->GetPreference('policy_maxservices', 1000000));
         $policy->set_max_products($ecomm->GetPreference('policy_maxproducts', 1000000));
@@ -534,7 +529,7 @@ final class ecomm
 
     public static function can_tax_shipping()
     {
-        $ecomm = \cms_utils::get_module('EcommerceExt');
+        $ecomm = \cms_utils::get_module(\MOD_ECOMMERCEEXT);
 
         return $ecomm->GetPreference('tax_shipping', 1);
     }
