@@ -10,7 +10,7 @@ E-commerce functionality.
 The module requires that the latest version (v1.4.5) of CMSMSExt module (a fork of CGExtensions) is installed
 on the server.
 
-Download and unzip the latest EcommerceExt-x.x.x.xml.zip from [releases](./releases). Use CMSMS's Module Manager
+Download and unzip the latest EcommerceExt-x.x.x.xml.zip from [releases](../../releases). Use CMSMS's Module Manager
 to upload the unzipped XML file to your server.
 
 The module will only install on servers running CMSMS v2.2.19 on PHP 8.0 or newer. The software may run on older
